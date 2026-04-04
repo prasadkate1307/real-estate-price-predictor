@@ -14,8 +14,11 @@ with open(os.path.join(BASE_DIR, "Real_estate_df.pkl"), "rb") as file:
 
 with open(os.path.join(BASE_DIR, "Real_estate_pipeline.pkl"), "rb") as file:
     pipeline = pickle.load(file)
-        
-st.image("real-estate.jpg", use_container_width=True)   
+
+image_path = os.path.join(BASE_DIR, "real-estate.jpg")
+
+st.image(image_path, use_container_width=True)      
+   
 st.title("🏠 Real Estate Price Predictor")
   
 
