@@ -2,14 +2,18 @@ import streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
+import os
 
 st.set_page_config(page_title="House Price Predictor",layout="wide",
     page_icon="🏠")
-with open("Real_estate_df.pkl",'rb') as file:
-    df=pickle.load(file)
-    
-with open("Real_estate_pipeline.pkl",'rb') as file:
-    pipeline=pickle.load(file)
+
+BASE_DIR = os.path.dirname(__file__)
+
+with open(os.path.join(BASE_DIR, "Real_estate_df.pkl"), "rb") as file:
+    df = pickle.load(file)
+
+with open(os.path.join(BASE_DIR, "Real_estate_pipeline.pkl"), "rb") as file:
+    pipeline = pickle.load(file)
         
 st.image("real-estate.jpg", use_container_width=True)   
 st.title("🏠 Real Estate Price Predictor")
